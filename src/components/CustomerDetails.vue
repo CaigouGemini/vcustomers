@@ -60,12 +60,12 @@
         this.$http.get("http://localhost:3000/users/" + id)
           .then((response)=>{
           //  console.log(response);
-             this.customer = response.body;
+             this.customer = response.data;
           })
       },
       deleteCustomer(id){
         this.$http.delete("http://localhost:3000/users/" + id)
-            .then(function(response){
+            .then((response)=>{
               this.$router.push({path:'/',query:{alert:"用户信息删除成功！"}});
             })
       }

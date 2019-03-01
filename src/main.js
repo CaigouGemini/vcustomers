@@ -8,11 +8,13 @@ import About from './components/About.vue';
 import Add from './components/Add.vue';
 import CustomerDetails from './components/CustomerDetails.vue';
 import Edit from './components/Edit.vue';
-import VueResource from 'vue-resource';
+// import VueResource from 'vue-resource';
+import axios from 'axios'
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter);
-Vue.use(VueResource);
+// Vue.use(VueResource);
+Vue.prototype.$http = axios;
 
 const router = new VueRouter({
   mode: 'history',

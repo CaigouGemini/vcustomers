@@ -57,7 +57,7 @@ export default {
           profile:this.customer.profile
         };
           this.$http.post("http://localhost:3000/users" , newCustomer)
-            .then(function(response){
+            .then((response)=>{
               // console.log(response);
               this.$router.push({path:'/', query:{alert:"用户信息添加成功"}})
             })

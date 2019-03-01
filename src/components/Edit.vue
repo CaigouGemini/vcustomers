@@ -42,9 +42,9 @@ export default {
   methods:{
     fetchCustomer(id){
       this.$http.get("http://localhost:3000/users/"+id)
-          .then(function(response){
+          .then((response)=>{
             // console.log(response);
-            this.customer= response.body;
+            this.customer= response.data;
           })
     },
     updateCustomer(e){
@@ -63,7 +63,7 @@ export default {
           profile:this.customer.profile
         };
           this.$http.put("http://localhost:3000/users/" + this.$route.params.id, updateCustomer)
-            .then(function(response){
+            .then((response)=>{
               // console.log(response);
               this.$router.push({path:'/', query:{alert:"用户信息更新成功"}})
             })

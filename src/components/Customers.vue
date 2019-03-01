@@ -46,9 +46,9 @@ export default {
   methods:{
     fetchCustomers(){
       this.$http.get("http://localhost:3000/users")
-        .then(function(response){
+        .then((response)=>{
           // console.log(response);
-           this.customers = response.body;
+           this.customers = response.data;
         })
     },
     filterBy(customers,value){
